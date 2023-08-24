@@ -10,5 +10,6 @@ namespace AcademySistem.Infra.Interface
     public interface IUserRepository
     {
         User Create(User entrada);
+        Task<List<User>> GetAll();
     }
 }

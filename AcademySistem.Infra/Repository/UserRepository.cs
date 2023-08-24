@@ -23,5 +23,9 @@ namespace AcademySistem.Infra.Repository
             _academySistemContext.SaveChanges();
             return entrada;
         }
+        public async Task<List<User>> GetAll()
+        {
+            return _academySistemContext.Users.ToList();
+        }
     }
 }

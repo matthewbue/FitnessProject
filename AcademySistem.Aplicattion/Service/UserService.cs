@@ -28,5 +28,10 @@ namespace AcademySistem.Aplicattion.Service
             _userRepository.Create(Objetouser);
             return new ReturnDefault("Criado com sucesso.", Objetouser);
         }
+        public ReturnDefault GetAll()
+        {
+            var result = _userRepository.GetAll();
+            return new ReturnDefault("Sucesso", result);
+        }
     }
 }

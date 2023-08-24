@@ -19,5 +19,18 @@ namespace AcademySistemAPI.Controllers
             var result = _userService.Create(entrada);
             return Ok(result);
         }
+        [HttpGet("GetAll")]
+        public ActionResult GetAll()
+        {
+            try
+            {
+                var result = _userService.GetAll();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
