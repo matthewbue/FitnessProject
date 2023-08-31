@@ -33,5 +33,10 @@ namespace AcademySistem.Aplicattion.Service
             var result = _userRepository.GetAll();
             return new ReturnDefault("Sucesso", result);
         }
+        public ReturnDefault Delete(int entrada)
+        {
+            _userRepository.Delete(entrada);
+            return new ReturnDefault("Sucesso", "");
+        }
     }
 }

@@ -32,5 +32,18 @@ namespace AcademySistemAPI.Controllers
                 throw new Exception(ex.Message);
             }
         }
+        [HttpDelete("Delete")]
+        public IActionResult Delete(int entrada)
+        {
+            try
+            {
+                var result = _userService.Delete(entrada);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

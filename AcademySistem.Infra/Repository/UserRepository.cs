@@ -4,6 +4,7 @@ using AcademySistem.Infra.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,6 +27,19 @@ namespace AcademySistem.Infra.Repository
         public async Task<List<User>> GetAll()
         {
             return _academySistemContext.Users.ToList();
+        }
+        public void Delete(int entrada)
+        {
+            try
+            {
+                var result = _academySistemContext.Users.Where(r => r.Id == entrada).FirstOrDefault();
+                _academySistemContext.Users.Remove(result);
+                _academySistemContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception();
+            }
         }
     }
 }

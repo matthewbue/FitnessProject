@@ -11,5 +11,6 @@ namespace AcademySistem.Infra.Interface
     {
         User Create(User entrada);
         Task<List<User>> GetAll();
+        void Delete(int entrada);
     }
 }
