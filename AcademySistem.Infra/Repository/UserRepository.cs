@@ -1,6 +1,7 @@
 ﻿using AcademySistem.Domain.Model;
 using AcademySistem.Infra.Context;
 using AcademySistem.Infra.Interface;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,18 @@ namespace AcademySistem.Infra.Repository
             _academySistemContext.Users.Add(entrada);
             _academySistemContext.SaveChanges();
             return entrada;
+        }
+
+        public User GetById(int entrada)
+        {
+            var result =_academySistemContext.Users.Where(x => x.Id == entrada).FirstOrDefault();
+            return result;
+        }
+
+        public void Update(User entrada)
+        {
+            _academySistemContext.Entry(entrada).State = EntityState.Modified;
+            _academySistemContext.SaveChanges();
         }
     }
 }

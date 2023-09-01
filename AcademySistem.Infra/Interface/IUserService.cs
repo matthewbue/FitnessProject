@@ -11,5 +11,7 @@ namespace AcademySistem.Infra.Interface
     public interface IUserService
     {
         ReturnDefault Create(UserCreateDTO entrada);
+        ReturnDefault Update(UserUpdateDTO entrada);
+        ReturnDefault GetById(int entrada);
     }
 }

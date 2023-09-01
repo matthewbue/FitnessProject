@@ -10,5 +10,7 @@ namespace AcademySistem.Infra.Interface
     public interface IUserRepository
     {
         User Create(User entrada);
+        void Update(User entrada);
+        User GetById(int entrada);
     }
 }

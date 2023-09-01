@@ -19,5 +19,17 @@ namespace AcademySistemAPI.Controllers
             var result = _userService.Create(entrada);
             return Ok(result);
         }
+        [HttpPut("Update")]
+        public IActionResult Update(UserUpdateDTO entrada)
+        {
+            var result = _userService.Update(entrada);
+            return Ok(result);
+        }
+        [HttpGet("GetById")]
+        public IActionResult GetById(int entrada)
+        {
+            var result = _userService.GetById(entrada);
+            return Ok(result);
+        }
     }
 }
