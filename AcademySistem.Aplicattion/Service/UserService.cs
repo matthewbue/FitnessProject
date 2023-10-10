@@ -18,6 +18,7 @@ namespace AcademySistem.Aplicattion.Service
         }
         public ReturnDefault Create(UserCreateDTO entrada)
         {
+            //aeeeeee
             var Objetouser = new User();
             Objetouser.Telefone = entrada.Telefone;
             Objetouser.Senha = entrada.Senha;
